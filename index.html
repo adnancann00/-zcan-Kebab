@@ -155,44 +155,87 @@
         <p>Ocakbaşının sevilen tabaklarından birkaçı. Menünün tamamı ve güncel fiyatlar için bizi arayın.</p>
       </div>
 
-      <!-- Yemek fotoğrafları işletmenin kendi paylaşımları (bkz. GORSELLER.txt) -->
-      <div class="dishes">
-        <article class="dish dish--lead">
-          <img src="img/cag.jpg" alt="Beyaz tabakta şişleriyle dizilmiş çağ kebabı dilimleri" width="1024" height="683" loading="lazy" decoding="async">
-          <div class="dish__body">
-            <p class="dish__tag">Ocağın imzası</p>
-            <h3>Çağ Kebap</h3>
-            <p>Yatay şişte közün önünde döner, ince dilimlenip şişiyle tabağa gelir.</p>
+      <!-- Yörünge menü: kaydırdıkça tabak yörüngede değişir (menu-yorunge.js). Fotoğraflar işletmenin kendi paylaşımları (bkz. GORSELLER.txt) -->
+      <div class="yr-trk" data-renkler='["#E0A35A","#D8664A","#C9503A","#9A7BB4","#E8B54D"]'>
+        <div class="yr-root" role="region" aria-roledescription="karusel" aria-label="Menüden tabaklar" tabindex="0">
+          <img class="yr-bd" src="img/og.jpg" alt="" width="1200" height="630" loading="lazy">
+          <div class="yr-wash"></div>
+          <div class="yr-canvas">
+            <svg class="yr-arc" viewBox="0 0 960 520" aria-hidden="true"><path/></svg>
+            <div class="yr-pager" aria-label="Tabak seçin">
+              <button type="button" class="yr-btn yr-dot" aria-label="Çağ Kebap" aria-current="true"><i></i></button>
+              <button type="button" class="yr-btn yr-dot" aria-label="İskender"><i></i></button>
+              <button type="button" class="yr-btn yr-dot" aria-label="Adana Kebap"><i></i></button>
+              <button type="button" class="yr-btn yr-dot" aria-label="Patlıcan Kebap"><i></i></button>
+              <button type="button" class="yr-btn yr-dot" aria-label="Tavuk Şiş"><i></i></button>
+            </div>
+            <div class="yr-plates">
+              <div class="yr-orbit is-on"><img src="img/cag.jpg" alt="Beyaz tabakta şişleriyle dizilmiş çağ kebabı dilimleri" width="245" height="245" draggable="false" loading="lazy" decoding="async"></div>
+              <div class="yr-orbit" aria-hidden="true"><img src="img/iskender.jpg" alt="Bakır tabakta domates soslu İskender kebap ve yoğurt" width="245" height="245" draggable="false" loading="lazy" decoding="async"></div>
+              <div class="yr-orbit" aria-hidden="true"><img src="img/adana.jpg" alt="Tabakta Adana kebap ve tavuk şiş, yanında salata" width="245" height="245" draggable="false" loading="lazy" decoding="async"></div>
+              <div class="yr-orbit" aria-hidden="true"><img src="img/patlican.jpg" alt="Şişte közlenmiş patlıcan ve köfte, domates ve biberle" width="245" height="245" draggable="false" loading="lazy" decoding="async"></div>
+              <div class="yr-orbit" aria-hidden="true"><img src="img/tavuk.jpg" alt="Tavuk şiş, bulgur pilavı, havuç ve yeşillik tabağı" width="245" height="245" draggable="false" loading="lazy" decoding="async"></div>
+            </div>
+            <div class="yr-head" aria-live="polite">
+              <div class="yr-hd is-on"><p class="yr-eye">01 / 05 · Ocağın Sofrası</p><h3><span class="yr-t1">Ocağın imzası</span><span class="yr-t2">Çağ Kebap</span></h3></div>
+              <div class="yr-hd" aria-hidden="true"><p class="yr-eye">02 / 05 · Ocağın Sofrası</p><h3><span class="yr-t1">Yoğurtlu</span><span class="yr-t2">İskender</span></h3></div>
+              <div class="yr-hd" aria-hidden="true"><p class="yr-eye">03 / 05 · Ocağın Sofrası</p><h3><span class="yr-t1">Közde</span><span class="yr-t2">Adana Kebap</span></h3></div>
+              <div class="yr-hd" aria-hidden="true"><p class="yr-eye">04 / 05 · Ocağın Sofrası</p><h3><span class="yr-t1">Közlenmiş</span><span class="yr-t2">Patlıcan Kebap</span></h3></div>
+              <div class="yr-hd" aria-hidden="true"><p class="yr-eye">05 / 05 · Ocağın Sofrası</p><h3><span class="yr-t1">Közde</span><span class="yr-t2">Tavuk Şiş</span></h3></div>
+            </div>
+            <div class="yr-acts">
+              <a class="yr-btn" href="#rezervasyon"><svg class="ic" aria-hidden="true"><use href="#i-ok"/></svg>Masa Ayırt</a>
+              <a class="yr-btn" href="tel:+902125270027"><svg class="ic" aria-hidden="true"><use href="#i-tel"/></svg>Hemen Ara</a>
+            </div>
+            <div class="yr-card">
+              <p class="yr-kartbas">Tabak Bilgisi</p>
+              <div class="yr-bodies">
+                <div class="yr-body is-on">
+                  <div class="yr-rate"><span class="yr-badge" style="background:#E0A35A"></span><span class="yr-num">01</span></div>
+                  <p class="yr-ad">Çağ Kebap</p>
+                  <p class="yr-alt">Kebapçı Özcan Usta · Sirkeci</p>
+                  <p class="yr-desc">Yatay şişte közün önünde döner, ince dilimlenip şişiyle tabağa gelir.</p>
+                </div>
+                <div class="yr-body" aria-hidden="true">
+                  <div class="yr-rate"><span class="yr-badge" style="background:#D8664A"></span><span class="yr-num">02</span></div>
+                  <p class="yr-ad">İskender</p>
+                  <p class="yr-alt">Kebapçı Özcan Usta · Sirkeci</p>
+                  <p class="yr-desc">İnce döner, pide ve domates sosu. Yanında yoğurt.</p>
+                </div>
+                <div class="yr-body" aria-hidden="true">
+                  <div class="yr-rate"><span class="yr-badge" style="background:#C9503A"></span><span class="yr-num">03</span></div>
+                  <p class="yr-ad">Adana Kebap</p>
+                  <p class="yr-alt">Kebapçı Özcan Usta · Sirkeci</p>
+                  <p class="yr-desc">Közde pişen acılı kıyma; bulgur pilavı ve közlenmiş biberle.</p>
+                </div>
+                <div class="yr-body" aria-hidden="true">
+                  <div class="yr-rate"><span class="yr-badge" style="background:#9A7BB4"></span><span class="yr-num">04</span></div>
+                  <p class="yr-ad">Patlıcan Kebap</p>
+                  <p class="yr-alt">Kebapçı Özcan Usta · Sirkeci</p>
+                  <p class="yr-desc">Patlıcan ve kıyma aynı şişte, közde birlikte pişer.</p>
+                </div>
+                <div class="yr-body" aria-hidden="true">
+                  <div class="yr-rate"><span class="yr-badge" style="background:#E8B54D"></span><span class="yr-num">05</span></div>
+                  <p class="yr-ad">Tavuk Şiş</p>
+                  <p class="yr-alt">Kebapçı Özcan Usta · Sirkeci</p>
+                  <p class="yr-desc">Közde pişen tavuk; bulgur pilavı, salata ve közlenmiş biberle.</p>
+                </div>
+              </div>
+              <a class="yr-fiyat" href="tel:+902125270027">Fiyat ve porsiyon için arayın</a>
+            </div>
+            <div class="yr-strip">
+              <button type="button" class="yr-btn yr-arrow" data-yon="-1" aria-label="Önceki tabak"><svg viewBox="0 0 12 16" aria-hidden="true"><path d="M11 0v16L0 8z"/></svg></button>
+              <div class="yr-win"><div class="yr-track">
+                  <div class="yr-th"><button type="button" class="yr-btn" aria-current="true"><img src="img/cag.jpg" alt="" width="56" height="56" loading="lazy" decoding="async"><span>Çağ Kebap</span></button></div>
+                  <div class="yr-th"><button type="button" class="yr-btn"><img src="img/iskender.jpg" alt="" width="56" height="56" loading="lazy" decoding="async"><span>İskender</span></button></div>
+                  <div class="yr-th"><button type="button" class="yr-btn"><img src="img/adana.jpg" alt="" width="56" height="56" loading="lazy" decoding="async"><span>Adana Kebap</span></button></div>
+                  <div class="yr-th"><button type="button" class="yr-btn"><img src="img/patlican.jpg" alt="" width="56" height="56" loading="lazy" decoding="async"><span>Patlıcan Kebap</span></button></div>
+                  <div class="yr-th"><button type="button" class="yr-btn"><img src="img/tavuk.jpg" alt="" width="56" height="56" loading="lazy" decoding="async"><span>Tavuk Şiş</span></button></div>
+              </div></div>
+              <button type="button" class="yr-btn yr-arrow" data-yon="1" aria-label="Sonraki tabak"><svg viewBox="0 0 12 16" aria-hidden="true"><path d="M1 0v16l11-8z"/></svg></button>
+            </div>
           </div>
-        </article>
-        <article class="dish">
-          <img src="img/iskender.jpg" alt="Bakır tabakta domates soslu İskender kebap ve yoğurt" width="810" height="540" loading="lazy" decoding="async">
-          <div class="dish__body">
-            <h3>İskender</h3>
-            <p>İnce döner, pide ve domates sosu. Yanında yoğurt.</p>
-          </div>
-        </article>
-        <article class="dish">
-          <img src="img/adana.jpg" alt="Tabakta Adana kebap ve tavuk şiş, yanında salata" width="608" height="405" loading="lazy" decoding="async">
-          <div class="dish__body">
-            <h3>Adana Kebap</h3>
-            <p>Közde pişen acılı kıyma; bulgur pilavı ve közlenmiş biberle.</p>
-          </div>
-        </article>
-        <article class="dish">
-          <img src="img/patlican.jpg" alt="Şişte közlenmiş patlıcan ve köfte, domates ve biberle" width="1024" height="683" loading="lazy" decoding="async">
-          <div class="dish__body">
-            <h3>Patlıcan Kebap</h3>
-            <p>Patlıcan ve kıyma aynı şişte, közde birlikte pişer.</p>
-          </div>
-        </article>
-        <article class="dish">
-          <img src="img/tavuk.jpg" alt="Tavuk şiş, bulgur pilavı, havuç ve yeşillik tabağı" width="1170" height="780" loading="lazy" decoding="async">
-          <div class="dish__body">
-            <h3>Tavuk Şiş</h3>
-            <p>Közde pişen tavuk; bulgur pilavı, salata ve közlenmiş biberle.</p>
-          </div>
-        </article>
+        </div>
       </div>
 
       <div class="menu__cta">
@@ -368,6 +411,9 @@
   <a href="#rezervasyon" class="callbar__book">Masa Ayırt</a>
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="script.js"></script>
+<script src="menu-yorunge.js"></script>
 </body>
 </html>
