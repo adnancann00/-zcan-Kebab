@@ -120,3 +120,37 @@ Neden C: gerçek dağılıma dayanıyor (3.161 / 3.545 = %89); rakam yerine yaz�
 - A: "Saatler / Her gün 11:00 - 24:00", "Yol tarifi al" *(mevcut)*
 - B: "Bizi Bulun", "Açık Olduğumuz Saatler"
 - ✅ C: Footer başlıkları "Çalışma Saatleri" ve "İletişim"; "Yol Tarifi Al"; SEO başlığı "Kebapçı Özcan Usta | Sirkeci'de Ocakbaşı ve Kebap"; açıklama "Sirkeci Hocapaşa Sokağı'nda ocakbaşı. Adana kebap, İskender, pide, lahmacun ve dürüm; her gün 11:00-24:00. Rezervasyon: 0212 527 00 27."; paylaşım başlığı "Kebapçı Özcan Usta | Közün tadı, ustanın elinde"
+
+---
+
+# Hero yeniden yazımı (2026-11-14, ikinci tur)
+
+Kriterler: başlık 3-7 kelime; köz, ateş, ustalık, lezzet temaları doğal; açıklama ≤20 kelime; abartı yok. Ziyaretçi ilk 3 saniyede **ne** (kebap, ocakbaşı) ve **neden** (usta işi) sorularının cevabını almalı.
+
+## 10 başlık alternatifi
+
+| # | Başlık | Kelime | Değerlendirme |
+|---|---|---|---|
+| 1 | Közün Tadı, Ustanın Elinde | 5 | Şiirsel ama "kebap" demiyor; konsept ilk bakışta belirsiz |
+| 2 | Ateşin Başında Bir Usta | 4 | Atmosfer var, yemek yok |
+| 3 | Közde Pişer, Ustadan Gelir | 4 | Ne piştiği belli değil |
+| 4 | Ateş, Köz ve Bir Usta | 5 | Ocakbaşını iyi anlatıyor; ritmi güçlü |
+| 5 | Sirkeci'de Közün Başı | 4 | Konum güçlü, nitelik zayıf |
+| 6 | Ocak Yanar, Sofra Kurulur | 4 | Kültürü anlatıyor; kebap ve ustalık yok |
+| 7 | Usta Eli, Köz Ateşi | 4 | Kısa ama devrik ve sert |
+| 8 | Kebabın Sırrı Közde Saklı | 4 | "Sır" iddia ve klişe |
+| 9 | Lezzet Közde, Ustalık Elde | 4 | Zorlama kafiye |
+| 10 | Közde Kebap, Ustanın Elinden | 4 | Konsept (kebap), yöntem (köz) ve nitelik (usta) tek satırda |
+
+## En iyi 3
+
+1. ✅ **Közde Kebap, Ustanın Elinden** (10): üç saniye testini geçen tek başlık; "kebap" kelimesi ilk iki kelimede, marka adındaki "usta" ile bağlanıyor, iddia değil tarif.
+2. **Ateş, Köz ve Bir Usta** (4): en akılda kalıcı ritim; ama yemeği açıkça söylemiyor.
+3. **Közün Tadı, Ustanın Elinde** (1): mevcut başlık; zarif ama konsepti hemen vermiyor.
+
+## Uygulanan hero
+
+- Slogan (başlık üstü etiket): **"Ocakbaşı geleneği, Sirkeci'de"**. Alternatifler: "Ateşin başında, sofranın ortasında" (uzun), "Sirkeci'nin ocakbaşı kebapçısı" (tekrar).
+- Başlık: **Közde Kebap, / Ustanın *Elinden***
+- Açıklama (14 kelime): **"Adana'dan İskender'e, pideden dürüme ocakbaşı lezzetleri. Hocapaşa Sokağı'nda, her gün 11:00'den gece yarısına kadar."**
+- Düğmeler: **Menü** · **Masa Rezervasyonu** (mobilde tek ana çağrı kuralı gereği yalnızca "Hemen Ara" görünür)
