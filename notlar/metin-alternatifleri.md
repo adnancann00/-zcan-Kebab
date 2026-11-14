@@ -158,3 +158,11 @@ Kriterler: başlık 3-7 kelime; köz, ateş, ustalık, lezzet temaları doğal; 
 ## Güncelleme
 
 Kullanıcı başlığı kendisi belirledi: **Közün Başında, / Lezzetin *Merkezinde*** (5 kelime). Sitede uygulandı; slogan, açıklama ve düğmeler aynı kaldı.
+
+## Hero açıklaması (üçüncü tur)
+
+- A: "Adana'dan İskender'e, ocakbaşının bilinen lezzetleri tek sofrada. Sirkeci Hocapaşa Sokağı'nda, her gün gece yarısına kadar." (15)
+- B: "Közde pişen Adana, tereyağlı İskender, fırından pide ve dürüm. Hocapaşa Sokağı'nda, her gün 11:00'den gece yarısına kadar." (16)
+- ✅ C: "Közde kızaran Adana, tereyağıyla gelen İskender, fırından yeni çıkmış pide. Hocapaşa Sokağı'nda, her gün gece yarısına kadar." (17)
+
+Neden C: yemekleri saymak yerine duyusal olarak anlatıyor. Açılış saati hemen alttaki "Her Gün Açık · 11:00 - 24:00" satırında olduğu için tekrarlanmadı.
