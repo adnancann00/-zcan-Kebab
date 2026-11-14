@@ -26,7 +26,7 @@
   --golge-1: 0 1px 2px rgba(20,16,10,.06), 0 10px 28px -14px rgba(20,16,10,.22);
   --golge-2: 0 2px 6px rgba(20,16,10,.06), 0 28px 60px -28px rgba(20,16,10,.42);
   --hiz: cubic-bezier(.2,.7,.2,1);
-  --demo-h: 32px; /* DEMO MODU şerit yüksekliği; demo bitince 0 */
+  --demo-h: 0px; /* demo şeridi kaldırıldı; geri gelirse 32px */
 }
 
 *, *::before, *::after { box-sizing: border-box; }
