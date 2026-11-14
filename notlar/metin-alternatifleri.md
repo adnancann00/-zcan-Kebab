@@ -154,3 +154,7 @@ Kriterler: başlık 3-7 kelime; köz, ateş, ustalık, lezzet temaları doğal; 
 - Başlık: **Közde Kebap, / Ustanın *Elinden***
 - Açıklama (14 kelime): **"Adana'dan İskender'e, pideden dürüme ocakbaşı lezzetleri. Hocapaşa Sokağı'nda, her gün 11:00'den gece yarısına kadar."**
 - Düğmeler: **Menü** · **Masa Rezervasyonu** (mobilde tek ana çağrı kuralı gereği yalnızca "Hemen Ara" görünür)
+
+## Güncelleme
+
+Kullanıcı başlığı kendisi belirledi: **Közün Başında, / Lezzetin *Merkezinde*** (5 kelime). Sitede uygulandı; slogan, açıklama ve düğmeler aynı kaldı.

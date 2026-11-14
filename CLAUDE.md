@@ -47,7 +47,7 @@ python3 -m http.server 8000   # sonra http://localhost:8000
 
 Kod yorumları, CSS değişken adları, ID'ler ve tüm metinler Türkçe. Yeni eklemeler de Türkçe olmalı.
 
-**Marka dili (2026-11-14):** premium ama samimi, kısa cümleler, "siz" hitabı (düğmeler kısa emir: "Masa Ayırt", "Hemen Ara", "Menüyü İncele"). Hero başlığı: "Közde Kebap, Ustanın Elinden"; başlık üstü slogan: "Ocakbaşı geleneği, Sirkeci'de" (2026-11-14, 10 alternatiften seçildi). Hero düğmeleri: "Menü" ve "Masa Rezervasyonu" (mobilde yalnızca "Hemen Ara"). Gerçek olmayan ödül, tarihçe, malzeme, pişirme tekniği, tazelik veya kalite iddiası yazılmaz; yalnızca işletme bilgileri ve yemeklerin bilinen tanımı kullanılır. Tüm bölümlerin 3'er alternatifi ve seçim gerekçeleri: `notlar/metin-alternatifleri.md`.
+**Marka dili (2026-11-14):** premium ama samimi, kısa cümleler, "siz" hitabı (düğmeler kısa emir: "Masa Ayırt", "Hemen Ara", "Menüyü İncele"). Hero başlığı: "Közün Başında, Lezzetin Merkezinde" (kullanıcının kendi seçimi, 2026-11-14; önceki "Közde Kebap, Ustanın Elinden"); başlık üstü slogan: "Ocakbaşı geleneği, Sirkeci'de" (2026-11-14, 10 alternatiften seçildi). Hero düğmeleri: "Menü" ve "Masa Rezervasyonu" (mobilde yalnızca "Hemen Ara"). Gerçek olmayan ödül, tarihçe, malzeme, pişirme tekniği, tazelik veya kalite iddiası yazılmaz; yalnızca işletme bilgileri ve yemeklerin bilinen tanımı kullanılır. Tüm bölümlerin 3'er alternatifi ve seçim gerekçeleri: `notlar/metin-alternatifleri.md`.
 
 **Kullanıcının yazım kuralı (2026-11-14):** sitedeki metinlerde uzun tire (– —) ve abartılı sıfat ("unutulmaz", "eşsiz", "olmazsa olmaz" vb.) kullanma. Saat aralıkları `11:00 - 24:00` biçiminde yazılıyor.
 
