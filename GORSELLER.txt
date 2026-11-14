@@ -1,0 +1,17 @@
+Görsel kaynakları (hepsi DEMO, gerçek fotoğraflarla değiştirilecek)
+
+Yeni tasarımda kullanılanlar:
+img/hero-adana.jpg  Wikimedia Commons, "Lula kebab 2.jpg", CC BY-SA 2.0
+img/ocak.jpg        Wikimedia Commons, "Marinated Chicken Skewers roasted in Charcoal.jpg", CC BY-SA 4.0
+img/adana.jpg       Wikimedia Commons, "Adana Kebap.jpg", CC BY-SA 4.0
+img/iskender.jpg    Wikimedia Commons, "İskender Kebap.jpg", CC BY-SA 4.0
+img/lahmacun.jpg    Wikimedia Commons, "Acılı Lahmacun.jpg", CC BY-SA 4.0
+img/durum.jpg       Wikimedia Commons, "Ali Baba Döner-Kebap-Stube Tauberbischofsheim - Dürüm mit Ayran.jpg", CC BY-SA 4.0 (kırpıldı)
+img/ayran.jpg       Wikimedia Commons, "Some ayran in copper cups.jpg", CC BY-SA 2.0
+
+Yalnızca eski tasarımda (eski-tasarim/) kullanılan:
+img/google-ana.jpg  İşletmenin Google Maps profilindeki ana fotoğraf (Apify ile alındı).
+                    Yayından önce işletme sahibinden izin alın veya kendi çekiminizle değiştirin.
+
+Gerçek fotoğraflar gelince aynı dosya adlarıyla img/ klasörüne koymak yeterli.
+Önerilen oranlar: hero yatay (3:2, en az 1800px), ocak.jpg dikey veya kare, yemekler yatay (3:2).

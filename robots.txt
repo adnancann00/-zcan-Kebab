@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /eski-tasarim/
+
+Sitemap: https://www.ozcanusta.com.tr/sitemap.xml
