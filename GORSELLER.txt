@@ -1,17 +1,23 @@
-Görsel kaynakları (hepsi DEMO, gerçek fotoğraflarla değiştirilecek)
+Görsel kaynakları
 
-Yeni tasarımda kullanılanlar:
-img/hero-adana.jpg  Wikimedia Commons, "Lula kebab 2.jpg", CC BY-SA 2.0
-img/ocak.jpg        Wikimedia Commons, "Marinated Chicken Skewers roasted in Charcoal.jpg", CC BY-SA 4.0
-img/adana.jpg       Wikimedia Commons, "Adana Kebap.jpg", CC BY-SA 4.0
-img/iskender.jpg    Wikimedia Commons, "İskender Kebap.jpg", CC BY-SA 4.0
-img/lahmacun.jpg    Wikimedia Commons, "Acılı Lahmacun.jpg", CC BY-SA 4.0
-img/durum.jpg       Wikimedia Commons, "Ali Baba Döner-Kebap-Stube Tauberbischofsheim - Dürüm mit Ayran.jpg", CC BY-SA 4.0 (kırpıldı)
-img/ayran.jpg       Wikimedia Commons, "Some ayran in copper cups.jpg", CC BY-SA 2.0
+Sitedeki fotoğrafların hepsi işletmenin KENDİ yüklediği fotoğraflar:
+Google İşletme Profili "Kebapçı Özcan Usta", yükleyen = işletme hesabı
+(maps.google.com/maps/contrib/102403324626267798827). 2026-11-14'te Apify
+Google Maps Scraper (compass/crawler-google-places) ile alındı. Müşterilerin
+yüklediği fotoğraflar bilerek KULLANILMADI (telif hakkı o kişilere ait).
+İşletmenin izni henüz yok: satış görüşmesinde izin istenmeli.
 
-Yalnızca eski tasarımda (eski-tasarim/) kullanılan:
-img/google-ana.jpg  İşletmenin Google Maps profilindeki ana fotoğraf (Apify ile alındı).
-                    Yayından önce işletme sahibinden izin alın veya kendi çekiminizle değiştirin.
+img/hero.jpg      çağ kebap tabağı (2024-11-25 yüklemesi), 1000x667
+img/cag.jpg       çağ kebap tabağı (2017-03-26), 1024x683
+img/ocak.jpg      çağ kebap ocağı ve tabelası (2026-11-01), 864x1080 kırpım
+img/iskender.jpg  İskender (2026-07-11), 810x540 kırpım
+img/adana.jpg     Adana + tavuk şiş tabağı (2026-09-15), 608x405 kırpım (alttaki yazı kesildi)
+img/patlican.jpg  patlıcan kebap (2024-11-25), 1024x683
+img/tavuk.jpg     tavuk şiş (2026-11-01), 1170x780 kırpım (logo ve "Tavuk Şiş" yazısı kesildi)
+img/og.jpg        restoran cephesi (2026-11-01), 1200x630 paylaşım önizlemesi
 
-Gerçek fotoğraflar gelince aynı dosya adlarıyla img/ klasörüne koymak yeterli.
-Önerilen oranlar: hero yatay (3:2, en az 1800px), ocak.jpg dikey veya kare, yemekler yatay (3:2).
+Çözünürlük düşük olanlar (adana, iskender) işletmeden aslı istenirse yenilenmeli.
+Önerilen oranlar: hero 3:2 (en az 1800px), ocak dikey, yemekler 3:2.
+
+Eski tasarım (eski-tasarim/img/): Wikimedia Commons demo görselleri (CC BY-SA)
+ve google-ana.jpg (git'e gönderilmiyor).

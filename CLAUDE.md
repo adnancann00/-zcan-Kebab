@@ -8,28 +8,28 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 **Kebapçı Özcan Usta** (Sirkeci, İstanbul) restoranı için tek sayfalık tanıtım sitesi. Sayfanın amacı ziyaretçiyi telefonla aramaya ya da rezervasyon formunu doldurmaya yönlendirmek: mobilde sabit "Hemen ara / Masa ayırt" çubuğu, belirgin rezervasyon bölümü.
 
-- **Kullanıcı işletme sahibini TANIMIYOR (2026-11-14, kullanıcının kendi ifadesi).** İşletmenin bu siteden haberi/onayı yok. Sonuçları: Google Maps'ten fotoğraf çekilmez (Takeout/scraper dahil); site işletme adına gerçek talep toplamamalı; herkese açık yayın işletmeyi temsil ediyormuş gibi durmamalı. Kullanıcı **demo modunu** seçti (2026-11-14) ve uygulandı:
+- **Kullanıcı işletme sahibini TANIMIYOR (2026-11-14, kullanıcının kendi ifadesi).** İşletmenin bu siteden haberi/onayı yok. **Amaç (2026-11-14): siteyi işletmeye satmak**; demo, satış görüşmesinde gösterilecek. Fotoğraf kuralı güncellendi (kullanıcının isteği, 2026-11-14): yalnızca işletmenin KENDİ yüklediği Google Maps fotoğrafları kullanılır, müşteri fotoğrafları kullanılmaz (bkz. §4 Fotoğraflar). Ayrıca site işletme adına gerçek talep toplamamalı; herkese açık yayın işletmeyi temsil ediyormuş gibi durmamalı. Kullanıcı **demo modunu** seçti (2026-11-14) ve uygulandı:
   - Header'ın üstünde altın şerit: "Tasarım örneğidir · İşletmeyle bağlantılı değildir" (`.demo-bar`, yükseklik `--demo-h: 32px`; hero padding, scroll-margin ve mobil menü bu değişkene göre kayıyor).
   - Rezervasyon formu ve Supabase kodu kaldırıldı; yerinde `#rezervasyon.form--demo` kartı ("Rezervasyon Telefonla" + gerçek numarayı arayan düğme). Formun Supabase'li hali: commit `a698844`.
   - Arama motorlarına kapalı: `<meta name="robots" content="noindex, nofollow">`, `robots.txt` → `Disallow: /`, `vercel.json` ile `X-Robots-Tag: noindex, nofollow`. Canonical ve og:url kaldırıldı; og:image vercel.app adresinde; title/og "Web Sitesi Tasarım Örneği".
   - JSON-LD yerel işletme şeması sayfadan kaldırıldı (işletme adına arama motoruna beyan olmasın); içeriği `notlar/yerel-isletme-semasi.json` dosyasında saklı.
   - `info@ozcanusta.com.tr` kaldırıldı: `ozcanusta.com.tr` alan adının DNS kaydı yok (A ve MX boş, 2026-11-14), yani adres gerçek değil.
   - Demo modundan çıkmak (işletme onay verirse): şeridi ve `--demo-h`'yi kaldır, noindex/robots/vercel.json'u geri al, formu `a698844`'ten geri getir, şemayı geri koy, gerçek alan adı ve e-postayı işletmeden al.
-- Yayın adresi / alan adı **[bilinmiyor]**. Sitede `info@ozcanusta.com.tr` geçiyor ama bu adresin gerçek olup olmadığı doğrulanmadı.
+- Gerçek alan adı **[bilinmiyor]**; demo https://ozcan-kebap.vercel.app adresinde.
+- **İşletmenin herkese açık bilgileri (kendi fotoğraflarından, 2026-11-14):** tabelada "Since 1967", ana ürün "Çağ Kebap", Instagram ve YouTube `@kebapciozcan`, menüde Adana, Patlıcan, Yoğurtlu, Beyti, Domatesli, Karışık kebap, tavuk şiş, burger, pizza, kuru fasulye. Sitede 1967 iddiası henüz kullanılmadı (sahibiyle teyit edilince eklenebilir).
 
 ## 2. Teknolojiler ve araçlar
 
 - Düz HTML + CSS + vanilla JS. Build adımı, paket yöneticisi, test ya da linter yok.
 - Google Fonts: "Big Shoulders Display" (başlıklar/tabela), "Instrument Sans" (gövde metni).
-- Supabase (Postgres + REST): rezervasyon talepleri. Proje `gkbdxrcdknsvtowzknmn`. Netlify Forms artık kullanılmıyor.
+- Supabase (Postgres + REST): demo modunda sayfadan KALDIRILDI. Proje `gkbdxrcdknsvtowzknmn` ve tablo hâlâ duruyor (bkz. §7).
 - Vercel: barındırma (GitHub'dan otomatik yayın).
 - Google Maps embed iframe'i ve yol tarifi linki.
 - **Canlı (2026-11-14):** https://ozcan-kebap.vercel.app (Vercel projesi `ozcan-kebap`, hesap `acc-61e4`, kullanıcı GitHub'dan bağladı). GitHub'a her push otomatik yeniden yayınlıyor. Yayındaki 14 dosya yerel kopyayla byte byte aynı olarak doğrulandı.
 - **Git + GitHub (2026-11-14):** https://github.com/adnancann00/-zcan-Kebab (herkese açık, dal `main`). Kimlik yalnızca bu depoda: `adnancann00` / `adnancann00@users.noreply.github.com` (gmail herkese açık commit'lerde görünmesin diye). Push için macOS anahtar zinciri (osxkeychain) kullanılıyor. `img/google-ana.jpg` `.gitignore` içinde, depoya gönderilmedi; bu yüzden depodan klonlanan `eski-tasarim/` hero görseli göstermez.
 - Google Fonts: "Cormorant Garamond" (serif başlıklar) + "Inter" (gövde). Eski tasarımdaki Big Shoulders / Instrument Sans artık yalnızca `eski-tasarim/` içinde.
-- Demo görseller Wikimedia Commons API'siyle arandı ve indirildi; `sips` ile kırpıldı/sıkıştırıldı.
+- Fotoğraflar: Apify Google Maps Scraper (`compass/crawler-google-places`, aktör `nwua9Gu5YrADL7ZDj`) ile `scrapeImageAuthors: true`, `authorName == "Kebapçı Özcan Usta"` olanlar süzüldü (80 fotoğraftan 37'si). Apify anahtarı dosyalara YAZILMAZ, kullanıcıdan istenir. `sips` ile kırpıldı; dikkat: Google bazılarını PNG olarak veriyor, `sips -s format jpeg` şart.
 - Görsel kontrol: headless Chrome ile ekran görüntüsü (bkz. §6, mobil test notu).
-- `img/google-ana.jpg`, Apify ile Google Maps profilinden çekildi (bkz. `GORSELLER.txt`). Yeni tasarımda kullanılmıyor.
 
 Yerelde çalıştırma:
 
@@ -44,12 +44,12 @@ python3 -m http.server 8000   # sonra http://localhost:8000
 - `index.html`: sayfanın tamamı. Bölümler: hero → `#hikaye` (fotoğraf + istatistik + çalışma saatleri kartı) → `#menu` → `#yorumlar` (Google puanı + neden biz) → `#sss` → `#iletisim` (form `#rezervasyon`) → footer. Bu ID'ler Nav, mobil `.callbar` ve skip link bu ID'lere gidiyor; birini yeniden adlandırırsan tüm linkleri güncelle. `<head>` içinde schema.org `Restaurant` JSON-LD bloğu var. Sayfanın başında gizli bir SVG `<symbol>` ikon seti var (`#i-ates`, `#i-saat`, `#i-tel`, `#i-ok` …); ikonlar `<svg class="ic"><use href="#i-..."/></svg>` ile kullanılıyor.
 - `styles.css`: tasarım token'ları `:root` üzerinde (`--gece`, `--kor`, `--altin`, `--krem`, `--metin*`, fontlar `--f-serif` / `--f-sans`). Sınıf adları BEM benzeri (`block__element`, `block--modifier`), durum sınıfları `is-*` (`is-solid`, `is-open`). Kırılma noktaları: 1180px (geniş tablet), 960px (tablet, hamburger menü), 640px (mobil, alt arama çubuğu). Açılış animasyonu yalnızca `prefers-reduced-motion: no-preference` olduğunda çalışıyor.
 - `script.js`: tek bir IIFE. Kaydırınca nav'a zemin veriyor, mobil menüyü açıp kapatıyor (`aria-expanded` ve `.sr` etiketini senkron tutuyor, Escape ile kapanıyor), alt bilgideki yılı yazıyor, tarih alanının `min` değerini bugüne ayarlıyor ve rezervasyon formunu yönetiyor.
-- `eski-tasarim/`: ilk (yeşil/mermer) tasarımın yedeği; görselleri `../img/` üzerinden kullanıyor. Karşılaştırma için tutuluyor.
-- `img/`: DEMO görseller. Kaynakları `GORSELLER.txt` dosyasında.
+- `eski-tasarim/`: ilk (yeşil/mermer) tasarımın yedeği; Wikimedia demo görselleri kendi `eski-tasarim/img/` klasöründe.
+- `img/`: işletmenin kendi fotoğrafları (hero, cag, ocak, iskender, adana, patlican, tavuk, og). Kaynakları `GORSELLER.txt` dosyasında.
 - `GORSELLER.txt`: her görselin kaynağı ve lisansı.
 - `robots.txt`, `sitemap.xml`: arama motorları için. `eski-tasarim/` taramadan hariç.
 - `favicon.svg`: sekme ikonu (altın çerçeveli ateş).
-- `img/og.jpg`: paylaşım önizleme görseli (1200x630), hero fotoğrafından kırpıldı.
+- `img/og.jpg`: paylaşım önizleme görseli (1200x630), restoran cephesi.
 
 Kod yorumları, CSS değişken adları, ID'ler ve tüm metinler Türkçe. Yeni eklemeler de Türkçe olmalı.
 
@@ -72,6 +72,7 @@ Kod yorumları, CSS değişken adları, ID'ler ve tüm metinler Türkçe. Yeni e
 - **JSON-LD'den `aggregateRating` kaldırıldı:** Google, işletmenin kendi sayfasındaki öz değerlendirme puanını (Google yorumlarını kopyalamak dahil) yıldız olarak göstermiyor ve yönergelerine aykırı sayabiliyor. Puan sayfada metin olarak duruyor.
 - **Kapanış saati şemada `23:59`:** schema.org'da gece yarısı kapanış için önerilen biçim bu.
 - **Görsel sıkıştırma:** makinede WebP üreticisi yok (`sips` WebP yazamıyor, `cwebp` yok). JPEG'ler gösterim boyutuna küçültülüp `sips -s formatOptions 50` ile sıkıştırıldı: 2,8 MB → 0,9 MB. Hero/Adana 1600px, diğer yemekler 1200px, ocak 1000px. Yeni gerçek fotoğraflar da bu boyutlara getirilmeli.
+- **Fotoğraflar (2026-11-14):** hero'nun radyal maskesi tabak fotoğrafı için tasarlandı; cephe fotoğrafı orada tabelayı kesiyordu, bu yüzden hero = çağ kebap tabağı, cephe yalnızca `og.jpg`. Menü, işletmenin fotoğrafı olan yemeklere göre değişti: Çağ Kebap (öne çıkan), İskender, Adana, Patlıcan Kebap, Tavuk Şiş. Pide/lahmacun, dürüm ve ayran kartları çıkarıldı (fotoğrafları yok). Footer: "Fotoğraflar: Kebapçı Özcan Usta'nın Google İşletme Profili".
 - **Framework yok:** statik HTML/CSS/JS ile her yerde ücretsiz barındırılabilir, bakımı kolay.
 - **Rezervasyon = Supabase (2026-11-14):** form, `script.js` içinden `fetch` ile `https://gkbdxrcdknsvtowzknmn.supabase.co/rest/v1/rezervasyonlar` adresine JSON POST ediyor (`apikey` başlığında publishable anahtar, `Prefer: return=minimal`). Tablo ve kurallar `supabase/migrations/20261114120000_rezervasyonlar.sql` içinde; kullanıcı bunu Supabase SQL Editor'da elle çalıştırdı (CLI yok, DB şifresi paylaşılmadı, paylaşılmasın). Güvenlik: RLS açık, `anon` yalnızca `ad, telefon, tarih, saat, kisi, notlar` sütunlarına INSERT yapabilir; SELECT/UPDATE/DELETE yok; politika geçmiş tarihi reddediyor (İstanbul saati). Veri kuralları: telefon `^[0-9 +()-]{7,20}$`, saat 11:00-23:00, kişi 1-9+, not ≤500. Aynı kontroller `script.js`'te de var. Honeypot `bot-field` doluysa istek gönderilmeden başarı gösteriliyor. Talepler Supabase panelinde Table Editor → `rezervasyonlar` altında okunuyor; `durum` sütunu (yeni/onaylandi/iptal) panelden güncelleniyor.
   - Doğrulama (kayıt bırakmadan): okuma → 401/42501, saat 02:00 → 400/23514 (ekleme izni geçti, kural reddetti), geçmiş tarih → 401 RLS, `durum` yazma → 401. Tam geçerli bir kayıtla canlı test kullanıcıya bırakıldı.
@@ -91,12 +92,13 @@ Doğrulanmış olanlar (dosyalara bakılarak, 2026-11-14):
 - [x] **Yeni tasarım (2026-11-14):** koyu/altın tema, Dribbble örneğine göre. Eski sürüm `eski-tasarim/` klasörüne yedeklendi. Masaüstü (1440px) ve mobil (390px) headless Chrome ile kontrol edildi.
 - [x] Demo görseller güncellendi: yeni `hero-adana.jpg`, `ocak.jpg`; `durum.jpg` gerçek bir dürüm fotoğrafıyla değiştirildi (eskisi lahmacun dürümüydü)
 - [x] Ziyaretçiye görünen yer tutucu yazılar kaldırıldı ("Stok görsel…", "[Kuruluş yılı…]", "[E-posta…]")
-- [x] Footer'a "Demo görseller: Wikimedia Commons (CC BY-SA)" atfı eklendi
 - [x] Rezervasyon saati 11:00 - 23:00 aralığı JS'te kontrol ediliyor
 - [x] **Bağlantı denetimi (2026-11-14):** 16 iç bağlantı, 6 tel, 2 mailto, 3 Google Maps bağlantısı. Headless Chrome ile 1440px ve 390px genişlikte her iç bağlantıya tıklanıp iniş noktası ölçüldü; hepsi geçti. Mobil menü (aç, linkle kapat, Escape), boş form ve saat kontrolü de test edildi. Test sayfaları scratchpad'deydi, kalıcı değil.
 - [x] **Metinler marka diliyle yeniden yazıldı (2026-11-14):** 11 bölüm, her biri için 3 alternatif (`notlar/metin-alternatifleri.md`). Tasarım/yapı değişmedi. Önceki turlarda yazılmış doğrulanmamış iddialar çıkarıldı ("Taze, günlük", "Her şiş siparişle ocağa girer", "en çok sipariş edilen", "Bakır maşrapada", müşteri profili).
 - [x] **Mobil tek el + SEO geçişi (2026-11-14):** bkz. §4. Ölçüldü: 390x664 ekranda başlık ve "Hemen Ara" ilk ekranda, 48px altı dokunma hedefi 0, alt çubuk açılış/formda gizli, menüde ve footer'da görünür. JSON-LD ve sitemap ayrıştırılarak doğrulandı.
 - [x] **Premium iyileştirme turu (2026-11-14):** boşluklar, tipografi hiyerarşisi, renk dengesi ve kart gölgeleri. İçerik ve yapı aynı kaldı. Hero başlığı: "Közde Pişer, Sofraya Gelir, *Sıcak Sıcak*".
+
+- [x] **İşletmenin kendi fotoğrafları yerleştirildi (2026-11-14):** bkz. §4 Fotoğraflar. 1440px ve 390px ekran görüntüsüyle kontrol edildi.
 
 İçerik doğruluğu (telefon, adres, saatler, puan, SSS cevapları) işletme sahibiyle teyit edildi mi: **[bilinmiyor]**
 
@@ -112,13 +114,11 @@ Doğrulanmış olanlar (dosyalara bakılarak, 2026-11-14):
 
 ## 7. Tamamlanmamış işler
 
-- [ ] `img/google-ana.jpg`: yeni tasarımda kullanılmıyor; yalnızca `eski-tasarim/` içinde. Eski tasarım yayınlanmayacaksa sorun değil.
-- [ ] Wikimedia görselleri: footer'da genel atıf var. Yayında kalacaklarsa CC BY-SA her görsel için yazar + lisans linki ister; en iyisi gerçek fotoğraflarla değiştirmek.
-- [ ] **Gerçek fotoğrafları yükle** (kullanıcı sonra gönderecek). Aynı dosya adlarıyla `img/` klasörüne koymak yeterli; önerilen oranlar `GORSELLER.txt` dosyasında.
+- [ ] **Fotoğraf izni:** işletmenin fotoğrafları izinsiz kullanılıyor; satış görüşmesinde izin ve yüksek çözünürlüklü asıllar istenmeli (adana 608px, iskender 810px düşük).
+- [ ] Hero metni hâlâ "fırından yeni çıkmış pide" diyor; menüde pide kartı kalmadı ve işletmenin pide yaptığı teyitli değil (tabelada pizza var).
 - [ ] İşletme bilgilerini ve `info@ozcanusta.com.tr` adresini teyit et
 - [ ] Yeni rezervasyon bildirimi yok (e-posta/SMS). Talepler yalnızca Supabase panelinde görünüyor. İstenirse Supabase Edge Function + e-posta servisi veya Database Webhook ile eklenebilir.
 - [ ] Hız sınırı yok: aynı kişi art arda çok talep gönderebilir (yalnızca honeypot + veri kuralları var).
-- [ ] **Site Google'a açık** (noindex yok), ama canonical/og:url/sitemap teyit edilmemiş `www.ozcanusta.com.tr` adresini gösteriyor. Kullanıcı ya gerçek alan adını vermeli ya da adresler `https://ozcan-kebap.vercel.app` yapılmalı. Önizleme mi açık yayın mı kararı da hâlâ verilmedi.
 
 İnceleme bulguları (2026-11-14, kod ve görseller incelenerek):
 
@@ -129,7 +129,7 @@ Doğrulanmış olanlar (dosyalara bakılarak, 2026-11-14):
 - [ ] **Supabase'de anon INSERT iznini kaldır** (kullanıcı SQL Editor'da çalıştıracak: `revoke insert on public.rezervasyonlar from anon;`) ve tabloda gerçek ziyaretçi kaydı var mı bak; varsa sil.
 - [ ] **Alan adını teyit et**; farklıysa §4'teki komutla değiştir. Yayından sonra Google Search Console'a sitemap gönder ve Google İşletme Profili'nde web sitesi bağlantısını ekle.
 - [ ] Yayından sonra Rich Results Test ve bir paylaşım önizleme aracıyla (ör. WhatsApp'ta link atarak) kontrol et
-- [ ] Sosyal medya linkleri (Instagram vb.) yok. Hesap olup olmadığı **[bilinmiyor]**.
+- [ ] Sosyal medya linkleri yok; hesaplar var: Instagram/YouTube `@kebapciozcan` (fotoğraflarından).
 - [ ] İngilizce sürüm yok (Sirkeci turistik bölge, düşünülebilir)
 - [ ] Tam menü / fiyat listesi yok (bilinçli karar, bkz. §4; ama kullanıcıya sorulabilir)
 
