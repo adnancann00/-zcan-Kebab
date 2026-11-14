@@ -93,7 +93,7 @@
       if (bad && !invalid) invalid = el;
     });
     if (invalid) {
-      setStatus('Ad, telefon, tarih ve saat alanlarını doldurun.', 'err');
+      setStatus('Lütfen ad, telefon, tarih ve saat alanlarını doldurun.', 'err');
       invalid.focus();
       return;
     }
@@ -124,7 +124,7 @@
     var adAlan = document.getElementById('f-ad');
     if (adAlan.value.trim().length < 2) {
       adAlan.setAttribute('aria-invalid', 'true');
-      setStatus('Adınızı yazın.', 'err');
+      setStatus('Lütfen adınızı yazın.', 'err');
       adAlan.focus();
       return;
     }
@@ -136,7 +136,7 @@
     // Bot tuzağı doluysa gönderme, başarılı gibi davran
     if (form.elements['bot-field'].value) {
       form.reset();
-      setStatus('Talebiniz alındı. Masanızı onaylamak için sizi arayacağız.', 'ok');
+      setStatus('Talebiniz bize ulaştı. Rezervasyonunuzu onaylamak için sizi arayacağız.', 'ok');
       btn.disabled = false; btn.textContent = 'Masa Ayırt';
       return;
     }
@@ -158,10 +158,10 @@
       .then(function (r) {
         if (!r.ok) throw new Error(r.status);
         form.reset();
-        setStatus('Talebiniz alındı. Masanızı onaylamak için sizi arayacağız.', 'ok');
+        setStatus('Talebiniz bize ulaştı. Rezervasyonunuzu onaylamak için sizi arayacağız.', 'ok');
       })
       .catch(function () {
-        setStatus('Talep gönderilemedi. Lütfen 0212 527 00 27 numarasını arayın.', 'err');
+        setStatus('Talebiniz gönderilemedi. Lütfen 0212 527 00 27 numarasından bizi arayın.', 'err');
       })
       .finally(function () {
         btn.disabled = false;

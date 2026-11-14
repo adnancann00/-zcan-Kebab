@@ -47,6 +47,8 @@ python3 -m http.server 8000   # sonra http://localhost:8000
 
 Kod yorumları, CSS değişken adları, ID'ler ve tüm metinler Türkçe. Yeni eklemeler de Türkçe olmalı.
 
+**Marka dili (2026-11-14):** premium ama samimi, kısa cümleler, "siz" hitabı (düğmeler kısa emir: "Masa Ayırt", "Hemen Ara", "Menüyü İncele"). Slogan: "Közün Tadı, Ustanın Elinde". Gerçek olmayan ödül, tarihçe, malzeme, pişirme tekniği, tazelik veya kalite iddiası yazılmaz; yalnızca işletme bilgileri ve yemeklerin bilinen tanımı kullanılır. Tüm bölümlerin 3'er alternatifi ve seçim gerekçeleri: `notlar/metin-alternatifleri.md`.
+
 **Kullanıcının yazım kuralı (2026-11-14):** sitedeki metinlerde uzun tire (– —) ve abartılı sıfat ("unutulmaz", "eşsiz", "olmazsa olmaz" vb.) kullanma. Saat aralıkları `11:00 - 24:00` biçiminde yazılıyor.
 
 ## 4. Teknik kararlar
@@ -84,6 +86,7 @@ Doğrulanmış olanlar (dosyalara bakılarak, 2026-11-14):
 - [x] Footer'a "Demo görseller: Wikimedia Commons (CC BY-SA)" atfı eklendi
 - [x] Rezervasyon saati 11:00 - 23:00 aralığı JS'te kontrol ediliyor
 - [x] **Bağlantı denetimi (2026-11-14):** 16 iç bağlantı, 6 tel, 2 mailto, 3 Google Maps bağlantısı. Headless Chrome ile 1440px ve 390px genişlikte her iç bağlantıya tıklanıp iniş noktası ölçüldü; hepsi geçti. Mobil menü (aç, linkle kapat, Escape), boş form ve saat kontrolü de test edildi. Test sayfaları scratchpad'deydi, kalıcı değil.
+- [x] **Metinler marka diliyle yeniden yazıldı (2026-11-14):** 11 bölüm, her biri için 3 alternatif (`notlar/metin-alternatifleri.md`). Tasarım/yapı değişmedi. Önceki turlarda yazılmış doğrulanmamış iddialar çıkarıldı ("Taze, günlük", "Her şiş siparişle ocağa girer", "en çok sipariş edilen", "Bakır maşrapada", müşteri profili).
 - [x] **Mobil tek el + SEO geçişi (2026-11-14):** bkz. §4. Ölçüldü: 390x664 ekranda başlık ve "Hemen Ara" ilk ekranda, 48px altı dokunma hedefi 0, alt çubuk açılış/formda gizli, menüde ve footer'da görünür. JSON-LD ve sitemap ayrıştırılarak doğrulandı.
 - [x] **Premium iyileştirme turu (2026-11-14):** boşluklar, tipografi hiyerarşisi, renk dengesi ve kart gölgeleri. İçerik ve yapı aynı kaldı. Hero başlığı: "Közde Pişer, Sofraya Gelir, *Sıcak Sıcak*".
 
