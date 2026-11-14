@@ -115,7 +115,6 @@ Doğrulanmış olanlar (dosyalara bakılarak, 2026-11-14):
 ## 7. Tamamlanmamış işler
 
 - [ ] **Fotoğraf izni:** işletmenin fotoğrafları izinsiz kullanılıyor; satış görüşmesinde izin ve yüksek çözünürlüklü asıllar istenmeli (adana 608px, iskender 810px düşük).
-- [ ] Hero metni hâlâ "fırından yeni çıkmış pide" diyor; menüde pide kartı kalmadı ve işletmenin pide yaptığı teyitli değil (tabelada pizza var).
 - [ ] İşletme bilgilerini ve `info@ozcanusta.com.tr` adresini teyit et
 - [ ] Yeni rezervasyon bildirimi yok (e-posta/SMS). Talepler yalnızca Supabase panelinde görünüyor. İstenirse Supabase Edge Function + e-posta servisi veya Database Webhook ile eklenebilir.
 - [ ] Hız sınırı yok: aynı kişi art arda çok talep gönderebilir (yalnızca honeypot + veri kuralları var).
