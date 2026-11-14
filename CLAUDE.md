@@ -8,7 +8,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 **Kebapçı Özcan Usta** (Sirkeci, İstanbul) restoranı için tek sayfalık tanıtım sitesi. Sayfanın amacı ziyaretçiyi telefonla aramaya ya da rezervasyon formunu doldurmaya yönlendirmek: mobilde sabit "Hemen ara / Masa ayırt" çubuğu, belirgin rezervasyon bölümü.
 
-- Kullanıcının işletmeyle ilişkisi (sahibi mi, onun için mi çalışıyor, yoksa satış/demo amaçlı mı) **[bilinmiyor]**
+- **Kullanıcı işletme sahibini TANIMIYOR (2026-11-14, kullanıcının kendi ifadesi).** İşletmenin bu siteden haberi/onayı yok. Sonuçları: Google Maps'ten fotoğraf çekilmez (Takeout/scraper dahil); site işletme adına gerçek talep toplamamalı; herkese açık yayın işletmeyi temsil ediyormuş gibi durmamalı. Önerilen: demo modu (bağlantısızlık şeridi, form kapalı, noindex) ve işletmeye tanıtım örneği olarak sunmak. Kullanıcının kararı bekleniyor.
 - Yayın adresi / alan adı **[bilinmiyor]**. Sitede `info@ozcanusta.com.tr` geçiyor ama bu adresin gerçek olup olmadığı doğrulanmadı.
 
 ## 2. Teknolojiler ve araçlar
