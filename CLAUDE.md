@@ -15,7 +15,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 - Düz HTML + CSS + vanilla JS. Build adımı, paket yöneticisi, test ya da linter yok.
 - Google Fonts: "Big Shoulders Display" (başlıklar/tabela), "Instrument Sans" (gövde metni).
-- Netlify Forms (rezervasyon formu için). Netlify'a deploy edilip edilmediği **[bilinmiyor]**; klasörde Netlify yapılandırma dosyası yok.
+- Supabase (Postgres + REST): rezervasyon talepleri. Proje `gkbdxrcdknsvtowzknmn`. Netlify Forms artık kullanılmıyor.
+- Vercel: barındırma (GitHub'dan otomatik yayın).
 - Google Maps embed iframe'i ve yol tarifi linki.
 - **Canlı (2026-11-14):** https://ozcan-kebap.vercel.app (Vercel projesi `ozcan-kebap`, hesap `acc-61e4`, kullanıcı GitHub'dan bağladı). GitHub'a her push otomatik yeniden yayınlıyor. Yayındaki 14 dosya yerel kopyayla byte byte aynı olarak doğrulandı.
 - **Git + GitHub (2026-11-14):** https://github.com/adnancann00/-zcan-Kebab (herkese açık, dal `main`). Kimlik yalnızca bu depoda: `adnancann00` / `adnancann00@users.noreply.github.com` (gmail herkese açık commit'lerde görünmesin diye). Push için macOS anahtar zinciri (osxkeychain) kullanılıyor. `img/google-ana.jpg` `.gitignore` içinde, depoya gönderilmedi; bu yüzden depodan klonlanan `eski-tasarim/` hero görseli göstermez.
@@ -62,7 +63,8 @@ Kod yorumları, CSS değişken adları, ID'ler ve tüm metinler Türkçe. Yeni e
 - **Kapanış saati şemada `23:59`:** schema.org'da gece yarısı kapanış için önerilen biçim bu.
 - **Görsel sıkıştırma:** makinede WebP üreticisi yok (`sips` WebP yazamıyor, `cwebp` yok). JPEG'ler gösterim boyutuna küçültülüp `sips -s formatOptions 50` ile sıkıştırıldı: 2,8 MB → 0,9 MB. Hero/Adana 1600px, diğer yemekler 1200px, ocak 1000px. Yeni gerçek fotoğraflar da bu boyutlara getirilmeli.
 - **Framework yok:** statik HTML/CSS/JS ile her yerde ücretsiz barındırılabilir, bakımı kolay.
-- **Rezervasyon = Netlify Forms:** `data-netlify="true"`, gizli `form-name` alanı, honeypot `bot-field` (`.hp` ile gizli). Formda `novalidate` var; zorunlu alanları `script.js` kontrol ediyor, sonra `FormData`'yı URL-encoded olarak `/` adresine POST ediyor. Gönderim yalnızca Netlify'da yayındayken çalışır; yerelde POST başarısız olur ve hata mesajı görünür. Formun `name` değeri ya da alanları değişirse Netlify öznitelikleri ve gizli alan da uyumlu kalmalı.
+- **Rezervasyon = Supabase (2026-11-14):** form, `script.js` içinden `fetch` ile `https://gkbdxrcdknsvtowzknmn.supabase.co/rest/v1/rezervasyonlar` adresine JSON POST ediyor (`apikey` başlığında publishable anahtar, `Prefer: return=minimal`). Tablo ve kurallar `supabase/migrations/20261114120000_rezervasyonlar.sql` içinde; kullanıcı bunu Supabase SQL Editor'da elle çalıştırdı (CLI yok, DB şifresi paylaşılmadı, paylaşılmasın). Güvenlik: RLS açık, `anon` yalnızca `ad, telefon, tarih, saat, kisi, notlar` sütunlarına INSERT yapabilir; SELECT/UPDATE/DELETE yok; politika geçmiş tarihi reddediyor (İstanbul saati). Veri kuralları: telefon `^[0-9 +()-]{7,20}$`, saat 11:00-23:00, kişi 1-9+, not ≤500. Aynı kontroller `script.js`'te de var. Honeypot `bot-field` doluysa istek gönderilmeden başarı gösteriliyor. Talepler Supabase panelinde Table Editor → `rezervasyonlar` altında okunuyor; `durum` sütunu (yeni/onaylandi/iptal) panelden güncelleniyor.
+  - Doğrulama (kayıt bırakmadan): okuma → 401/42501, saat 02:00 → 400/23514 (ekleme izni geçti, kural reddetti), geçmiş tarih → 401 RLS, `durum` yazma → 401. Tam geçerli bir kayıtla canlı test kullanıcıya bırakıldı.
 - **Rezervasyon onayı telefonla:** başarı mesajında "sizi arayacağız" yazıyor; hata durumunda telefon numarası gösteriliyor.
 - **Menüde fiyat yok:** "Güncel menü ve fiyatlar için bizi arayın" yazıyor.
 - **Erişilebilirlik:** skip link, `:focus-visible` stili, `aria-live` form durumu, hareket azaltma tercihine uyum.
@@ -103,7 +105,8 @@ Doğrulanmış olanlar (dosyalara bakılarak, 2026-11-14):
 - [ ] Wikimedia görselleri: footer'da genel atıf var. Yayında kalacaklarsa CC BY-SA her görsel için yazar + lisans linki ister; en iyisi gerçek fotoğraflarla değiştirmek.
 - [ ] **Gerçek fotoğrafları yükle** (kullanıcı sonra gönderecek). Aynı dosya adlarıyla `img/` klasörüne koymak yeterli; önerilen oranlar `GORSELLER.txt` dosyasında.
 - [ ] İşletme bilgilerini ve `info@ozcanusta.com.tr` adresini teyit et
-- [ ] **Rezervasyon formu canlıda çalışmıyor:** Vercel'de `POST /` → HTTP 405 (2026-11-14'te test edildi). Ziyaretçi "Talep gönderilemedi, lütfen arayın" mesajını görüyor. Karar bekliyor: Web3Forms ile e-postaya mı yönlendirilsin, yoksa form kaldırılıp arama düğmesi mi konsun.
+- [ ] Yeni rezervasyon bildirimi yok (e-posta/SMS). Talepler yalnızca Supabase panelinde görünüyor. İstenirse Supabase Edge Function + e-posta servisi veya Database Webhook ile eklenebilir.
+- [ ] Hız sınırı yok: aynı kişi art arda çok talep gönderebilir (yalnızca honeypot + veri kuralları var).
 - [ ] **Site Google'a açık** (noindex yok), ama canonical/og:url/sitemap teyit edilmemiş `www.ozcanusta.com.tr` adresini gösteriyor. Kullanıcı ya gerçek alan adını vermeli ya da adresler `https://ozcan-kebap.vercel.app` yapılmalı. Önizleme mi açık yayın mı kararı da hâlâ verilmedi.
 
 İnceleme bulguları (2026-11-14, kod ve görseller incelenerek):
