@@ -17,7 +17,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - Google Fonts: "Big Shoulders Display" (başlıklar/tabela), "Instrument Sans" (gövde metni).
 - Netlify Forms (rezervasyon formu için). Netlify'a deploy edilip edilmediği **[bilinmiyor]**; klasörde Netlify yapılandırma dosyası yok.
 - Google Maps embed iframe'i ve yol tarifi linki.
-- Git deposu yok (henüz versiyon kontrolü kurulmadı).
+- **Git + GitHub (2026-11-14):** https://github.com/adnancann00/-zcan-Kebab (herkese açık, dal `main`). Kimlik yalnızca bu depoda: `adnancann00` / `adnancann00@users.noreply.github.com` (gmail herkese açık commit'lerde görünmesin diye). Push için macOS anahtar zinciri (osxkeychain) kullanılıyor. `img/google-ana.jpg` `.gitignore` içinde, depoya gönderilmedi; bu yüzden depodan klonlanan `eski-tasarim/` hero görseli göstermez.
 - Google Fonts: "Cormorant Garamond" (serif başlıklar) + "Inter" (gövde). Eski tasarımdaki Big Shoulders / Instrument Sans artık yalnızca `eski-tasarim/` içinde.
 - Demo görseller Wikimedia Commons API'siyle arandı ve indirildi; `sips` ile kırpıldı/sıkıştırıldı.
 - Görsel kontrol: headless Chrome ile ekran görüntüsü (bkz. §6, mobil test notu).
@@ -102,8 +102,7 @@ Doğrulanmış olanlar (dosyalara bakılarak, 2026-11-14):
 - [ ] Wikimedia görselleri: footer'da genel atıf var. Yayında kalacaklarsa CC BY-SA her görsel için yazar + lisans linki ister; en iyisi gerçek fotoğraflarla değiştirmek.
 - [ ] **Gerçek fotoğrafları yükle** (kullanıcı sonra gönderecek). Aynı dosya adlarıyla `img/` klasörüne koymak yeterli; önerilen oranlar `GORSELLER.txt` dosyasında.
 - [ ] İşletme bilgilerini ve `info@ozcanusta.com.tr` adresini teyit et
-- [ ] Yayınla (Netlify'da) ve rezervasyon formunun bildirimlerinin kime gideceğini ayarla
-- [ ] Git deposu kur (isteğe bağlı ama öneriliyor)
+- [ ] **Yayın: kullanıcı Vercel istedi (2026-11-14), henüz yapılmadı.** Makinede node/npm/vercel CLI yok. Bekleyen kararlar: (1) form Netlify Forms'a göre kurulu, Vercel'de çalışmaz → Web3Forms ile e-postaya mı yönlendirilsin, yoksa form kaldırılıp arama düğmesi mi konsun; (2) önizleme (noindex) mi, tamamen açık mı. Kullanıcı bu sorulara henüz cevap vermedi. Vercel, GitHub deposuna bağlanarak da yayınlanabilir (CLI gerekmez).
 
 İnceleme bulguları (2026-11-14, kod ve görseller incelenerek):
 
