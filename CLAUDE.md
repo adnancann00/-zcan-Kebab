@@ -8,7 +8,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 **Kebapçı Özcan Usta** (Sirkeci, İstanbul) restoranı için tek sayfalık tanıtım sitesi. Sayfanın amacı ziyaretçiyi telefonla aramaya ya da rezervasyon formunu doldurmaya yönlendirmek: mobilde sabit "Hemen ara / Masa ayırt" çubuğu, belirgin rezervasyon bölümü.
 
-- **Kullanıcı işletme sahibini TANIMIYOR (2026-11-14, kullanıcının kendi ifadesi).** İşletmenin bu siteden haberi/onayı yok. Sonuçları: Google Maps'ten fotoğraf çekilmez (Takeout/scraper dahil); site işletme adına gerçek talep toplamamalı; herkese açık yayın işletmeyi temsil ediyormuş gibi durmamalı. Önerilen: demo modu (bağlantısızlık şeridi, form kapalı, noindex) ve işletmeye tanıtım örneği olarak sunmak. Kullanıcının kararı bekleniyor.
+- **Kullanıcı işletme sahibini TANIMIYOR (2026-11-14, kullanıcının kendi ifadesi).** İşletmenin bu siteden haberi/onayı yok. Sonuçları: Google Maps'ten fotoğraf çekilmez (Takeout/scraper dahil); site işletme adına gerçek talep toplamamalı; herkese açık yayın işletmeyi temsil ediyormuş gibi durmamalı. Kullanıcı **demo modunu** seçti (2026-11-14) ve uygulandı:
+  - Header'ın üstünde altın şerit: "Tasarım örneğidir · İşletmeyle bağlantılı değildir" (`.demo-bar`, yükseklik `--demo-h: 32px`; hero padding, scroll-margin ve mobil menü bu değişkene göre kayıyor).
+  - Rezervasyon formu ve Supabase kodu kaldırıldı; yerinde `#rezervasyon.form--demo` kartı ("Rezervasyon Telefonla" + gerçek numarayı arayan düğme). Formun Supabase'li hali: commit `a698844`.
+  - Arama motorlarına kapalı: `<meta name="robots" content="noindex, nofollow">`, `robots.txt` → `Disallow: /`, `vercel.json` ile `X-Robots-Tag: noindex, nofollow`. Canonical ve og:url kaldırıldı; og:image vercel.app adresinde; title/og "Web Sitesi Tasarım Örneği".
+  - JSON-LD yerel işletme şeması sayfadan kaldırıldı (işletme adına arama motoruna beyan olmasın); içeriği `notlar/yerel-isletme-semasi.json` dosyasında saklı.
+  - `info@ozcanusta.com.tr` kaldırıldı: `ozcanusta.com.tr` alan adının DNS kaydı yok (A ve MX boş, 2026-11-14), yani adres gerçek değil.
+  - Demo modundan çıkmak (işletme onay verirse): şeridi ve `--demo-h`'yi kaldır, noindex/robots/vercel.json'u geri al, formu `a698844`'ten geri getir, şemayı geri koy, gerçek alan adı ve e-postayı işletmeden al.
 - Yayın adresi / alan adı **[bilinmiyor]**. Sitede `info@ozcanusta.com.tr` geçiyor ama bu adresin gerçek olup olmadığı doğrulanmadı.
 
 ## 2. Teknolojiler ve araçlar
@@ -120,6 +126,7 @@ Doğrulanmış olanlar (dosyalara bakılarak, 2026-11-14):
 - [ ] Doğrulanmamış iddialar: helal kesim, tekerlekli sandalye girişi ve park yeri, 19:00–21:00 yoğunluk, taş fırın, yayık ayran, dürüm çeşitleri, bayram saatleri
 - [ ] Google puanı ve yıldız dağılımı (4,8 / 3.545) sabit yazılmış, zamanla eskiyecek
 - [ ] Formda KVKK aydınlatma metni / onay kutusu yok (ad ve telefon topluyor)
+- [ ] **Supabase'de anon INSERT iznini kaldır** (kullanıcı SQL Editor'da çalıştıracak: `revoke insert on public.rezervasyonlar from anon;`) ve tabloda gerçek ziyaretçi kaydı var mı bak; varsa sil.
 - [ ] **Alan adını teyit et**; farklıysa §4'teki komutla değiştir. Yayından sonra Google Search Console'a sitemap gönder ve Google İşletme Profili'nde web sitesi bağlantısını ekle.
 - [ ] Yayından sonra Rich Results Test ve bir paylaşım önizleme aracıyla (ör. WhatsApp'ta link atarak) kontrol et
 - [ ] Sosyal medya linkleri (Instagram vb.) yok. Hesap olup olmadığı **[bilinmiyor]**.

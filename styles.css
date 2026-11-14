@@ -26,6 +26,7 @@
   --golge-1: 0 1px 2px rgba(20,16,10,.06), 0 10px 28px -14px rgba(20,16,10,.22);
   --golge-2: 0 2px 6px rgba(20,16,10,.06), 0 28px 60px -28px rgba(20,16,10,.42);
   --hiz: cubic-bezier(.2,.7,.2,1);
+  --demo-h: 32px; /* DEMO MODU şerit yüksekliği; demo bitince 0 */
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -516,3 +517,24 @@ h2.hours__title { font-size: 1.875rem; color: var(--altin); font-weight: 500; }
 
 /* Serif rakamlar hizalı görünsün ("font" kısaltması bunu sıfırladığı için en sonda) */
 h1, h2, h3, .badge__num, .stats b, .score__num, .contact__list a, .contact__list li:first-child a, .hours__list, .brand__name { font-variant-numeric: lining-nums; }
+
+/* DEMO MODU */
+.demo-bar {
+  height: var(--demo-h); display: flex; align-items: center; justify-content: center;
+  padding: 0 16px; background: var(--altin); color: var(--gece);
+  font: 600 .75rem/1 var(--f-sans); letter-spacing: .04em; text-align: center; white-space: nowrap; overflow: hidden;
+}
+.hero__inner { padding-top: calc(168px + var(--demo-h)); }
+.section, .form { scroll-margin-top: calc(104px + var(--demo-h)); }
+.form--demo { justify-items: center; text-align: center; gap: 16px; }
+.form--demo__ic { width: 40px; height: 40px; color: var(--altin); stroke-width: 1.2; }
+.form--demo h3 { font-size: 2rem; font-weight: 500; }
+.form--demo p { color: var(--metin-acik); max-width: 26rem; }
+.form--demo .btn { margin-top: 8px; min-height: 56px; font-size: 1rem; }
+@media (max-width: 960px) {
+  .section, .form { scroll-margin-top: calc(88px + var(--demo-h)); }
+  .nav__links { top: calc(72px + var(--demo-h)); }
+}
+@media (max-width: 640px) {
+  .hero__inner { padding-top: calc(104px + var(--demo-h)); }
+}
