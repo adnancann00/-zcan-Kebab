@@ -21,3 +21,11 @@ img/og.jpg        restoran cephesi (2026-11-01), 1200x630 paylaşım önizlemesi
 
 Eski tasarım (eski-tasarim/img/): Wikimedia Commons demo görselleri (CC BY-SA)
 ve google-ana.jpg (git'e gönderilmiyor).
+
+Yeni tasarım önizlemesi (yeni/) için eklenenler, hepsi işletmenin kendi Google yüklemeleri:
+img/vitrin.jpg         akşam cephe (Apify listesi 03)
+img/usta.jpg           çağ ocağında usta (09, Instagram filigranı var)
+img/salon.jpg          iç salon (08)        img/salon-2.jpg  iç salon (16)
+img/salon-3.jpg        tablolu salon (30)   img/kalabalik.jpg  dolu masalar (10)
+img/pasaj-masalar.jpg  pasajda masalar (23) img/tepsi.jpg  karışık tepsi (28)
+img/cag-dilim.jpg      çağ kebabı kesimi (37) img/cag-tabak.jpg  çağ kebap tabağı (26)
