@@ -114,6 +114,7 @@ Doğrulanmış olanlar (dosyalara bakılarak, 2026-11-14):
 
 ## 7. Tamamlanmamış işler
 
+- [ ] **Depo herkese açık kalıyor (kullanıcının kararı, 2026-11-14):** gizli yapma önerildi, kullanıcı "siteyi birazdan canlıya alacağız" diyerek reddetti. İşletmenin fotoğrafları `ecffce0` ile herkese açık depoda ve canlı sitede (push sonrası canlı index ve 8 görsel yerel kopyayla aynı olarak doğrulandı).
 - [ ] **Fotoğraf izni:** işletmenin fotoğrafları izinsiz kullanılıyor; satış görüşmesinde izin ve yüksek çözünürlüklü asıllar istenmeli (adana 608px, iskender 810px düşük).
 - [ ] İşletme bilgilerini ve `info@ozcanusta.com.tr` adresini teyit et
 - [ ] Yeni rezervasyon bildirimi yok (e-posta/SMS). Talepler yalnızca Supabase panelinde görünüyor. İstenirse Supabase Edge Function + e-posta servisi veya Database Webhook ile eklenebilir.
